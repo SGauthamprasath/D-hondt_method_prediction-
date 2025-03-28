@@ -33,9 +33,6 @@ if st.button("Predict Seats"):
         dhondt_pred = predict(RF_model, input_values)
         
         st.write("### Predictions")
-        st.write(f"Lasso Regression: {lasso_pred} seats")
-        st.write(f"Linear Regression: {linear_pred} seats")
-        st.write(f"Ridge Regression: {ridge_pred} seats")
         st.write(f"D'Hondt Method: {dhondt_pred} seats")
     except Exception as e:
         st.error(f"Error: {e}")
