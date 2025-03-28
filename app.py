@@ -7,8 +7,9 @@ scaler = joblib.load('scaler.pkl')
 RF_model = joblib.load('RF_model.pkl')
 
 # Streamlit UI
-st.title("Multi-Model Seat Prediction")
-st.write("Enter details to predict the number of seats using different models")
+st.title("Seat Prediction using D'Hondt Method")
+st.write("Enter details to predict the number of seats using the D'Hondt method.")
+st.write("This app uses a Random Forest model trained on election data to predict the number of seats a party would receive based on the D'Hondt method.")
 
 # Input fields
 votes = st.number_input("Votes", min_value=0, value=100000)
