@@ -4,9 +4,6 @@ import streamlit as st
 
 # Load trained models
 scaler = joblib.load('scaler.pkl')
-linear_model = joblib.load('LR_model.pkl')
-lasso_model = joblib.load('best_L_model.pkl')
-ridge_model = joblib.load('R_model.pkl')
 RF_model = joblib.load('RF_model.pkl')
 
 # Streamlit UI
@@ -26,10 +23,6 @@ def predict(model, input_values):
 if st.button("Predict Seats"):
     try:
         input_values = np.array([votes, validVotesPercentage, totalMandates , Hondt]).reshape(1, -1)
-        
-        lasso_pred = predict(lasso_model, input_values)
-        linear_pred = predict(linear_model, input_values)
-        ridge_pred = predict(ridge_model, input_values)
         dhondt_pred = predict(RF_model, input_values)
         
         st.write("### Predictions")
